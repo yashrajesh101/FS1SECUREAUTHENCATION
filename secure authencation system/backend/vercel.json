@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "api/index.js"
+    }
+  ],
+  "env": {
+    "MONGO_CONN": "@mongo_conn",
+    "JWT_SECRET": "@jwt_secret",
+    "PORT": "8080"
+  }
+}
